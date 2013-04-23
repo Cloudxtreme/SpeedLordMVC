@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+Welcome to a game of myth and Legend: Lord MVC.
+
+So what shall we call you anyways?
+
+@ViewBag.ErrorMessage
+
+@Html.BeginForm("Register")
+{
+    My Name is: <input type="text" name="CharacterName"/>
+}

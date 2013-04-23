@@ -1,0 +1,4 @@
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\bin\Debug\SpeedLord.Interfaces.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\bin\Debug\SpeedLord.Interfaces.pdb
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.pdb

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+              Welcome to Lord MVC, a C#/Asp.Net MVC remake of the classic BBS game 
+            </p>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        You can @Html.ActionLink("Register", "Register", "Account") and create a character
+    </li>
+
+    <li class="two">
+        <h5>Check out the Blog to see how Progress is going</h5>
+        We are trying to updat ethe site weekly and will post a small note about what was done (even if it's not entirely visible at the time)
+    </li>
+
+    <li class="three">
+        <h5>Join the Project</h5>
+        If you'd like to join the LordMVC project, contact the team
+    </li>
+</ol>

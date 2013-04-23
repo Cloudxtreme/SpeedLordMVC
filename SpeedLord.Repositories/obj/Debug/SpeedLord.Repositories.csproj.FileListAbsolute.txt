@@ -1,0 +1,11 @@
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Repositories.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Repositories.pdb
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Dto.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Interfaces.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Enums.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Dto.pdb
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Interfaces.pdb
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\bin\Debug\SpeedLord.Enums.pdb
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\obj\Debug\SpeedLord.Repositories.csprojResolveAssemblyReference.cache
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\obj\Debug\SpeedLord.Repositories.dll
+C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Repositories\obj\Debug\SpeedLord.Repositories.pdb
