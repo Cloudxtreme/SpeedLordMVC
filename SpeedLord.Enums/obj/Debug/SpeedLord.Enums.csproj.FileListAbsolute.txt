@@ -2,3 +2,7 @@ C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Enums\bi
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Enums\bin\Debug\SpeedLord.Enums.pdb
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.dll
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\bin\Debug\SpeedLord.Enums.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\bin\Debug\SpeedLord.Enums.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.pdb

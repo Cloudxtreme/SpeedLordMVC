@@ -9,6 +9,6 @@ namespace SpeedLord.Interfaces.Repositories
     public interface ICharacterRepository
     {
         Character GetCharacterById(int id);
-        IEnumerable<Character> GetCharactersForAccount() 
+        IEnumerable<Character> GetCharactersForAccount();
     }
 }

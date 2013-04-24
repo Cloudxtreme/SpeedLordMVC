@@ -5,3 +5,10 @@ C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Dto\bin\
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.csprojResolveAssemblyReference.cache
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.dll
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\bin\Debug\SpeedLord.Dto.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\bin\Debug\SpeedLord.Dto.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\bin\Debug\SpeedLord.Enums.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\bin\Debug\SpeedLord.Enums.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Dto\obj\Debug\SpeedLord.Dto.pdb

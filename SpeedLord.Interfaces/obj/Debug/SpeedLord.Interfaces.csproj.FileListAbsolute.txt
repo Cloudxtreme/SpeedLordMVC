@@ -2,3 +2,12 @@ C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfac
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\bin\Debug\SpeedLord.Interfaces.pdb
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.dll
 C:\Users\eric\documents\visual studio 2010\Projects\SpeedLord\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\obj\Debug\SpeedLord.Interfaces.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Interfaces.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Interfaces.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Dto.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Enums.dll
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Dto.pdb
+C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Interfaces\bin\Debug\SpeedLord.Enums.pdb
