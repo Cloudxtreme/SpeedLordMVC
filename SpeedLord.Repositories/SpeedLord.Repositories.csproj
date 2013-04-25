@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fake\FakeAbilityRepository.cs" />
     <Compile Include="Fake\FakeAccountRepository.cs" />
+    <Compile Include="Fake\FakeCharacterRepository.cs" />
     <Compile Include="Fake\FakeRealmRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,6 +51,10 @@
     <ProjectReference Include="..\SpeedLord.Dto\SpeedLord.Dto.csproj">
       <Project>{AA098684-40A3-4DD6-AE17-794F3EB8D41A}</Project>
       <Name>SpeedLord.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpeedLord.Enums\SpeedLord.Enums.csproj">
+      <Project>{DC8F605C-B3E4-4FF9-96A1-6F7F2F34C59C}</Project>
+      <Name>SpeedLord.Enums</Name>
     </ProjectReference>
     <ProjectReference Include="..\SpeedLord.Interfaces\SpeedLord.Interfaces.csproj">
       <Project>{3B4045F6-4CF5-4C7B-BDCA-5EFF897A9C45}</Project>

@@ -15,7 +15,8 @@ namespace SpeedLord.Repositories.Fake
         {
             _allRealms = new List<Realm>
                              {
-                                 new Realm {Name = "Dev Realm", Id = 1}
+                                 new Realm {Name = "Dev Realm", Id = 1},
+                                 new Realm {Name = "Other Realm", Id = 2}
                              };
         }
 

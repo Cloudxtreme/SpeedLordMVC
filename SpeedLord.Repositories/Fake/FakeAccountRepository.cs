@@ -14,7 +14,9 @@ namespace SpeedLord.Repositories.Fake
         {
             _users = new List<User>
                          {
-                             new User {UserName = "eric", Password = "test"}
+                             new User {UserName = "eric", Password = "test", Id = 1},
+                             new User {UserName = "dan", Password = "test", Id = 2},
+                             new User {UserName = "steve", Password = "test", Id = 3},
                          };
         }
 

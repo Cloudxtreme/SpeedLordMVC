@@ -7,7 +7,8 @@ namespace SpeedLord.Dto
 {
     public class CharacterClass
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public List<Ability> Abilities { get; set; }
+        public Dictionary<int, Ability> AbilityAwards { get; set; }
     }
 }
