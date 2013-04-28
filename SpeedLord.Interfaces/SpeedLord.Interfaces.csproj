@@ -43,6 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IAbilityRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
+    <Compile Include="Repositories\ICharacterClassRepository.cs" />
     <Compile Include="Repositories\ICharacterRepository.cs" />
     <Compile Include="Repositories\IRealmRepository.cs" />
   </ItemGroup>

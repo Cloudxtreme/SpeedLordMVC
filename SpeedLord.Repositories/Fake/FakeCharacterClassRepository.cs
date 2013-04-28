@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SpeedLord.Interfaces.Repositories;
+using SpeedLord.Dto;
 
 namespace SpeedLord.Repositories.Fake
 {
-    class FakeCharacterClassRepository : ICharacterClassRepository
+    public class FakeCharacterClassRepository : ICharacterClassRepository
     {
-        public Dto.CharacterClass GetCharacterClassByName(string className)
+        private IEnumerable<CharacterClass> _allCharacterClasses; 
+        public FakeCharacterClassRepository()
+        {
+        }
+
+        public CharacterClass GetCharacterClassByName(string className)
         {
             throw new NotImplementedException();
         }

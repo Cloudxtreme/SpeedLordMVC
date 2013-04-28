@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Fake\FakeAbilityRepository.cs" />
     <Compile Include="Fake\FakeAccountRepository.cs" />
+    <Compile Include="Fake\FakeCharacterClassRepository.cs" />
     <Compile Include="Fake\FakeCharacterRepository.cs" />
     <Compile Include="Fake\FakeRealmRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
