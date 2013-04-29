@@ -21,7 +21,7 @@ namespace SpeedLord.Repositories.Fake
                                             AbilityType = AbilityType.Attack,
                                             Name = "Mighty Blow",
                                             Cost = 1,
-                                            Modifier = 100
+                                            Modifier = 120
                                         },
                                     new Ability
                                         {
@@ -43,6 +43,20 @@ namespace SpeedLord.Repositories.Fake
                                             Name = "Dissapear",
                                             Cost = 2,
                                             Modifier = 100
+                                        },
+                                   new Ability
+                                        {
+                                            AbilityType = AbilityType.Attack,
+                                            Name = "Backstab",
+                                            Cost = 1,
+                                            Modifier = 100
+                                        },
+                                    new Ability
+                                        {
+                                            AbilityType = AbilityType.Attack,
+                                            Name = "Fireball",
+                                            Cost = 1,
+                                            Modifier = 80
                                         },
                                 };
         }
