@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using SpeedLord.Dto;
 
 namespace SpeedLord.App
 {
@@ -16,37 +17,38 @@ namespace SpeedLord.App
     public class StateManager
     {
         //Keys
-        public const string CurrentCharacterData = "Character";
+        private const string CurrentCharacterData = "Character";
         private const string CurrentCharacterDataRefreshTime = "CharacterRefreshTime";
+        private const string SavedUserName = "SavedUser"; //for simulation
 
         /// <summary>
         ///     Get/Set Customer per session
-        ///     Note:  not sure why this was being done per request, except to avoid merge issues --so
         /// </summary>
-        public static ViewCustomer ViewCustomer
+        public static Character CurrentCharacter
         {
-            get { return GetFromSession<ViewCustomer>(CurrentCustomer); }
-            set { SetInSession(CurrentCustomer, value); }
+            get { return GetFromSession<Character>(CurrentCharacterData); }
+            set { SetInSession(CurrentCharacterData, value); }
+        }
+
+        /// <summary>
+        /// Last time character data was refreshed from database
+        /// </summary>
+        public static DateTime CurrentCharacterRefreshTime
+        {
+            get { return GetFromSession<DateTime>(CurrentCharacterDataRefreshTime); }
+            set { SetInSession(CurrentCharacterDataRefreshTime, value); }
         }
 
         /// <summary>
         /// Get/Set Customer per session
-        /// Note:  not sure why this was being done per request, except to avoid merge issues --so
         /// </summary>
-        public static UserPrincipal SavedUser
+        public static User CurrentUser
         {
-            get { return GetFromSession<UserPrincipal>(SavedUserName); }
+            get { return GetFromSession<User>(SavedUserName); }
             set { SetInSession(SavedUserName, value); }
         }
 
-        /// <summary>
-        /// Last ime customer data was refreshed from database
-        /// </summary>
-        public static DateTime ViewCustomerRefreshTime
-        {
-            get { return GetFromSession<DateTime>(CurrentCustomerRefreshTime); }
-            set { SetInSession(CurrentCustomerRefreshTime, value); }
-        }
+       
 
         /// <summary>
         /// Get value from session
@@ -56,10 +58,10 @@ namespace SpeedLord.App
         /// <returns></returns>
         private static T GetFromSession<T>(string key)
         {
-            if (HttpContextFactory.Current != null && HttpContextFactory.Current.Session != null
-                && HttpContextFactory.Current.Session[key] != null)
+            if (HttpContext.Current != null && HttpContext.Current.Session != null
+                && HttpContext.Current.Session[key] != null)
             {
-                return (T)HttpContextFactory.Current.Session[key];
+                return (T)HttpContext.Current.Session[key];
             }
             return default(T);
         }
@@ -72,8 +74,8 @@ namespace SpeedLord.App
         /// <param name="obj"></param>
         private static void SetInSession<T>(string key, T obj)
         {
-            if (HttpContextFactory.Current != null && HttpContextFactory.Current.Session != null)
-                HttpContextFactory.Current.Session.Add(key, obj);
+            if (HttpContext.Current != null && HttpContext.Current.Session != null)
+                HttpContext.Current.Session.Add(key, obj);
         }
 
 
@@ -85,8 +87,8 @@ namespace SpeedLord.App
         /// <returns></returns>
         private static T GetPerRequest<T>(string key)
         {
-            if (HttpContextFactory.Current != null && HttpContextFactory.Current.Items != null)
-                return (T)(HttpContextFactory.Current.Items.Contains(key) ? HttpContextFactory.Current.Items[key] : default(T));
+            if (HttpContext.Current != null && HttpContext.Current.Items != null)
+                return (T)(HttpContext.Current.Items.Contains(key) ? HttpContext.Current.Items[key] : default(T));
             return default(T);
         }
 
@@ -98,12 +100,12 @@ namespace SpeedLord.App
         /// <param name="obj"></param>
         private static void SetPerRequest<T>(string key, T obj)
         {
-            if (HttpContextFactory.Current != null && HttpContextFactory.Current.Items != null)
+            if (HttpContext.Current != null && HttpContext.Current.Items != null)
             {
-                if (HttpContextFactory.Current.Items.Contains(key))
-                    HttpContextFactory.Current.Items[key] = obj;
+                if (HttpContext.Current.Items.Contains(key))
+                    HttpContext.Current.Items[key] = obj;
                 else
-                    HttpContextFactory.Current.Items.Add(key, obj);
+                    HttpContext.Current.Items.Add(key, obj);
             }
         }
     }

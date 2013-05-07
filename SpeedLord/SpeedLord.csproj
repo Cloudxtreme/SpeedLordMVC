@@ -168,6 +168,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App\StateManager.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -325,6 +326,10 @@
     <Content Include="Views\NewCharacter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SpeedLord.Dto\SpeedLord.Dto.csproj">
+      <Project>{AA098684-40A3-4DD6-AE17-794F3EB8D41A}</Project>
+      <Name>SpeedLord.Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SpeedLord.Interfaces\SpeedLord.Interfaces.csproj">
       <Project>{3B4045F6-4CF5-4C7B-BDCA-5EFF897A9C45}</Project>
       <Name>SpeedLord.Interfaces</Name>

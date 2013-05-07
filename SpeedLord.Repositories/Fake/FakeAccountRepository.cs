@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Security;
 using SpeedLord.Interfaces.Repositories;
@@ -51,6 +52,15 @@ namespace SpeedLord.Repositories.Fake
             usr.Password = password;
 
             return true;
+        }
+
+
+        public User GetUserByUserName(string userName)
+        {
+            if (_users.All(i => i.UserName != userName) )
+                throw new ArgumentException("userName not found: " + userName);
+
+            return _users.First(i => i.UserName == userName);
         }
     }
 }

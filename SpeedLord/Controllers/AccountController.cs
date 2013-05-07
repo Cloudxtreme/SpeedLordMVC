@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using SpeedLord.Models;
 using SpeedLord.Interfaces.Repositories;
+using SpeedLord.App;
 
 namespace SpeedLord.Controllers
 {
@@ -46,6 +47,9 @@ namespace SpeedLord.Controllers
             if (ModelState.IsValid && _accountRepository.LoginUser(model.UserName, model.Password))
             {
                 FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+                StateManager.CurrentUser = _accountRepository.GetUserByUserName(model.UserName);
+
                 return RedirectToLocal(returnUrl);
             }
 
@@ -62,6 +66,8 @@ namespace SpeedLord.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
+
+            StateManager.CurrentUser = null;
 
             return RedirectToAction("Index", "Home");
         }

@@ -1,4 +1,6 @@
 ﻿
+using SpeedLord.Dto;
+
 namespace SpeedLord.Interfaces.Repositories
 {
     public interface IAccountRepository
@@ -6,5 +8,6 @@ namespace SpeedLord.Interfaces.Repositories
         bool LoginUser(string userName, string password);
         bool RegisterUser(string userName, string password, string matchPassword);
         bool ChangePassword(string userName, string password, string matchPassword);
+        User GetUserByUserName(string userName);
     }
 }
