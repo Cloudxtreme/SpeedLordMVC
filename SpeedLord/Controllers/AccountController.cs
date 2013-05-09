@@ -26,6 +26,27 @@ namespace SpeedLord.Controllers
         }
 
 
+        [AllowAnonymous]
+        [HttpPost]
+        public JsonResult JsonLogin(AccountModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                if (WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+                {
+                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    return Json(new { success = true, redirect = returnUrl });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                }
+            }
+
+            // If we got this far, something failed
+            return Json(new { errors = GetErrorsFromModelState() });
+        }
+
         //
         // GET: /Account/Login
 
@@ -196,6 +217,11 @@ namespace SpeedLord.Controllers
             {
                 OAuthWebSecurity.RequestAuthentication(Provider, ReturnUrl);
             }
+        }
+
+        private IEnumerable<string> GetErrorsFromModelState()
+        {
+            return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
