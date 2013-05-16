@@ -32,7 +32,7 @@ namespace SpeedLord.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+                if (_accountRepository.LoginUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return Json(new { success = true, redirect = returnUrl });

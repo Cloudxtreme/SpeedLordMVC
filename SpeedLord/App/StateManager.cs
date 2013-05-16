@@ -40,7 +40,7 @@ namespace SpeedLord.App
         }
 
         /// <summary>
-        /// Get/Set Customer per session
+        /// Get/Set User per session
         /// </summary>
         public static User CurrentUser
         {

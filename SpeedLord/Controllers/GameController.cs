@@ -16,5 +16,10 @@ namespace SpeedLord.Controllers
             return View();
         }
 
+        public JsonResult Play()
+        {
+            return new JsonResult {Data = string.Empty };
+        }
+
     }
 }
