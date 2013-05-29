@@ -25,10 +25,30 @@
 
     var outputDiv = "<div class=\"gameoutput\">" + result['OutputText'] + "</div>";
 
+    var screenOptions = result['ScreenOptions'];
+
+    console.log(screenOptions[0]);
+
+    var screenOptionsDiv = "<div class=\"screenoptions\">";
+
+    for (i = 0; i < screenOptions.length; i++) {
+        screenOptionsDiv += "<span>" + screenOptions[i].Description + "</span>";
+    }
+
+    screenOptionsDiv += "</div>";
+
     console.log(outputDiv);
 
     if (result) {
         $(".output").html(outputDiv);
+        $(".output").append(screenOptionsDiv);
     }
+    
+
+    $('.input').submit(function () {
+        alert('Handler for .submit() called.');
+        return false;
+    });
+
 
 });
