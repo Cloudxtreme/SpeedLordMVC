@@ -29,7 +29,7 @@ namespace SpeedLord.Controllers
             var screenResult = new ScreenResult
                 {
                     OutputText = "You have been initialized. Go to the street.",
-                   ScreenOptions = new List<ScreenOption>{ new ScreenOption{ CommandKey = "S", Description = "Go To the [S]treet", PostUrl = "~/Street"}}
+                   ScreenOptions = new List<ScreenOption>{ new ScreenOption{ CommandKey = "S", Description = "Go To the [S]treet", PostUrl = "Street"}}
                 };
             var data = JsonConvert.SerializeObject(screenResult);
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using SpeedLord.Models;
 
 namespace SpeedLord.Controllers
 {
@@ -11,9 +13,16 @@ namespace SpeedLord.Controllers
         //
         // GET: /Street/
 
-        public ActionResult Index()
+        public JsonResult Index()
         {
-            return View();
+            var screenResult = new ScreenResult
+            {
+                OutputText = "You are in the street",
+                ScreenOptions = new List<ScreenOption> { new ScreenOption { CommandKey = "F", Description = "Go To the [F]orest", PostUrl = "Forest" } }
+            };
+            var data = JsonConvert.SerializeObject(screenResult);
+
+            return new JsonResult { Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
     }
