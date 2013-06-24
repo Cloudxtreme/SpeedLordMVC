@@ -184,6 +184,7 @@
     <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\ForestController.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\HealerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InnController.cs" />
     <Compile Include="Controllers\NewCharacterController.cs" />

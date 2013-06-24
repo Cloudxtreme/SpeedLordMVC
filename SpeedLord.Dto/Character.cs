@@ -66,5 +66,10 @@ namespace SpeedLord.Dto
         /// What Realm this character belongs to
         /// </summary>
         public int RealmId { get; set; }
+
+        /// <summary>
+        /// Amount of encounters this character has left today
+        /// </summary>
+        public int EncountersLeft { get; set; }
     }
 }
