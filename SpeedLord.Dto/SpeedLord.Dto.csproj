@@ -44,6 +44,8 @@
     <Compile Include="Account.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterClass.cs" />
+    <Compile Include="Combat.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="Realm.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

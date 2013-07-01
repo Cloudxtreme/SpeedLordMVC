@@ -45,6 +45,8 @@
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Repositories\ICharacterClassRepository.cs" />
     <Compile Include="Repositories\ICharacterRepository.cs" />
+    <Compile Include="Repositories\ICombatRepository.cs" />
+    <Compile Include="Repositories\IMonsterRepository.cs" />
     <Compile Include="Repositories\IRealmRepository.cs" />
   </ItemGroup>
   <ItemGroup>

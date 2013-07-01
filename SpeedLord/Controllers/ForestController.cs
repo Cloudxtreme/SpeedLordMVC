@@ -36,6 +36,7 @@ namespace SpeedLord.Controllers
         {
             if (StateManager.CurrentCharacter.EncountersLeft > 0)
             {
+                /*
                 Random r = new Random();
                 var val = r.Next(1, 10);
 
@@ -54,7 +55,9 @@ namespace SpeedLord.Controllers
                 else if (val == 10)
                 {
                     //class event
-                }
+                }*/
+
+                //for now we'll always assume combat
             }
 
             var screenResult = new ScreenResult
