@@ -33,6 +33,7 @@ namespace SpeedLord
     public static void RegisterTypes(IUnityContainer container)
     {
         container.RegisterType<IAccountRepository, FakeAccountRepository>();
+        container.RegisterType<ICombatRepository, FakeCombatRepository>();
     }
   }
 }

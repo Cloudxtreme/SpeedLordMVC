@@ -5,14 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using SpeedLord.App;
+using SpeedLord.Dto;
 using SpeedLord.Models;
+using SpeedLord.Interfaces.Repositories;
 
 namespace SpeedLord.Controllers
 {
     public class ForestController : Controller
     {
+        private ICombatRepository _combatRepository;
+
+        public ForestController(ICombatRepository combatRepository)
+        {
+            _combatRepository = combatRepository;
+        }
+
         //
         // GET: /Forest/
+
 
         public JsonResult Index()
         {
@@ -58,6 +68,7 @@ namespace SpeedLord.Controllers
                 }*/
 
                 //for now we'll always assume combat
+                Combat cb = 
             }
 
             var screenResult = new ScreenResult
