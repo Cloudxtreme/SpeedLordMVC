@@ -68,7 +68,11 @@ namespace SpeedLord.Controllers
                 }*/
 
                 //for now we'll always assume combat
+<<<<<<< HEAD
                 Combat cb = 
+=======
+                
+>>>>>>> adding monster repo
             }
 
             var screenResult = new ScreenResult

@@ -6,7 +6,7 @@ using SpeedLord.Dto;
 
 namespace SpeedLord.Interfaces.Repositories
 {
-    interface IMonsterRepository
+    public interface IMonsterRepository
     {
         Monster GetRandomMonster(int playerLevel);
         Monster GetMonsterByName(string monsterName);
