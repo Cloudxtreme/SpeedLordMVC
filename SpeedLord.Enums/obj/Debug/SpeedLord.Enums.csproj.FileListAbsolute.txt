@@ -6,4 +6,3 @@ C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\bin\Debug\SpeedLord.
 C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\bin\Debug\SpeedLord.Enums.pdb
 C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.dll
 C:\Users\eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.pdb
-C:\Users\Eric\Documents\GitHub\SpeedLordMVC\SpeedLord.Enums\obj\Debug\SpeedLord.Enums.csprojResolveAssemblyReference.cache

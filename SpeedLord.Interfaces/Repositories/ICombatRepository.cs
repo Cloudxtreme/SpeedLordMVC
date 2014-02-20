@@ -8,7 +8,7 @@ namespace SpeedLord.Interfaces.Repositories
 {
     public interface ICombatRepository
     {
-        Combat StartCombat(int characterId);
+        Combat StartCombat(int characterId, Monster monster);
         Combat EndCombat(Guid combatId, CombatOutcome outcome);
     }
 }

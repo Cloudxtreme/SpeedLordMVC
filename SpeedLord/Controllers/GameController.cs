@@ -4,15 +4,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using SpeedLord.App;
 using SpeedLord.Models;
+using SpeedLord.Interfaces.Repositories;
 
 namespace SpeedLord.Controllers
 {
-    public class GameController : Controller
+    public class GameController : BaseController
     {
+        private readonly IAccountRepository _accountRepository;
+        private readonly ICharacterRepository _characterRepository;
+
+        public GameController(ICharacterRepository characterRepository, IAccountRepository accountRepository)
+        {
+            _accountRepository = accountRepository;
+            _characterRepository = characterRepository;
+        }
+
         //
         // GET: /Game/
 
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -26,14 +38,41 @@ namespace SpeedLord.Controllers
         
         public JsonResult Initialize()
         {
-            var screenResult = new ScreenResult
-                {
-                    OutputText = "You have been initialized. Go to the street.",
-                   ScreenOptions = new List<ScreenOption>{ new ScreenOption{ CommandKey = "S", Description = "Go To the [S]treet", PostUrl = "Street"}}
-                };
-            var data = JsonConvert.SerializeObject(screenResult);
+            //if we are logged in but 
+            if (StateManager.CurrentUser == null && User.Identity.IsAuthenticated)
+            {
+                StateManager.CurrentUser = _accountRepository.GetUserByUserName(User.Identity.Name);
+            }
 
-            return new JsonResult{ Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet};
+            //fetch their character or kick them to create a character loop
+            var character = _characterRepository.GetCharacterForAccount(StateManager.CurrentUser.Id);
+            if (character == null)
+            {
+                //go to character creation
+                return new JsonResult { Data = string.Empty };
+            }
+            else
+            {
+                StateManager.CurrentCharacter = character;
+
+
+                var screenResult = new ScreenResult
+                    {
+                        OutputText = string.Format("You have been initialized {0}. Go to the street.", character.Name),
+                        ScreenOptions =
+                            new List<ScreenOption>
+                                {
+                                    new ScreenOption
+                                        {
+                                            CommandKey = "S",
+                                            Description = "Go To the [S]treet",
+                                            PostUrl = "/Street"
+                                        }
+                                }
+                    };
+
+                return SerializeScreenResult(screenResult);
+            }
         }
     }
 }

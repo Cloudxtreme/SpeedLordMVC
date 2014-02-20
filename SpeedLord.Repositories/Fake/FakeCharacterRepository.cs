@@ -26,19 +26,19 @@ namespace SpeedLord.Repositories.Fake
                                          Id = 1, Level = 3, Name = "Frodo", MagicPoints = 2, AbilityXP = 4, CharmPoints = 10, HitPoints = 30, XP = 3000, 
                                          AvailableAbilities = new List<Ability>{ mightyBlow, mightyBlow, mightyBlow}, 
                                          CurrentAbilities = new List<Ability>{ mightyBlow},
-                                         OwnerAccountId = 1,
+                                         OwnerAccountId = 1, EncountersLeft = 10,
                                      },
                                      new Character { 
                                          Id = 2, Level = 3, Name = "Samwise", MagicPoints = 3, AbilityXP = 6, CharmPoints = 20, HitPoints = 30, XP = 3000, 
                                          AvailableAbilities = new List<Ability>{ mightyBlow, mightyBlow, mightyBlow, heal}, 
                                          CurrentAbilities = new List<Ability>{ mightyBlow, heal},
-                                         OwnerAccountId = 1,
+                                         OwnerAccountId = 2,
                                      },
                                      new Character { 
                                          Id = 3, Level = 3, Name = "Gandalf", MagicPoints = 10, AbilityXP = 8, CharmPoints = 30, HitPoints = 30, XP = 3000, 
                                          AvailableAbilities = new List<Ability>{ mightyBlow, mightyBlow, mightyBlow, heal}, 
                                          CurrentAbilities = new List<Ability>{ mightyBlow, heal},
-                                         OwnerAccountId = 1,
+                                         OwnerAccountId = 3,
                                      },
 
                                  };
@@ -52,9 +52,12 @@ namespace SpeedLord.Repositories.Fake
             return _allCharacters.First(c => c.Id == id);
         }
 
-        public IEnumerable<Character> GetCharactersForAccount()
+        public Character GetCharacterForAccount(int ownerAccountId)
         {
-            throw new NotImplementedException();
+            if(_allCharacters.All(a=> a.OwnerAccountId != ownerAccountId))
+                throw new ArgumentException("Invalid owner Account Id:" + ownerAccountId.ToString());
+
+            return _allCharacters.First(c => c.OwnerAccountId == ownerAccountId);
         }
     }
 }

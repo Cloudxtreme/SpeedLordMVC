@@ -9,7 +9,7 @@ namespace SpeedLord.Repositories.Fake
 {
     public class FakeMonsterRepository : IMonsterRepository
     {
-        private List<Monster> _allMonsters;
+        private readonly List<Monster> _allMonsters;
 
         public FakeMonsterRepository()
         {
@@ -47,12 +47,20 @@ namespace SpeedLord.Repositories.Fake
 
         public Dto.Monster GetRandomMonster(int playerLevel)
         {
-            throw new NotImplementedException();
+            var availableMonsters =
+                _allMonsters.Where(a => playerLevel >= a.MinLevel && playerLevel <= a.MaxLevel);
+
+            var r = new Random();
+            var enumerable = availableMonsters as IList<Monster> ?? availableMonsters.ToList();
+            int index =  r.Next(0, enumerable.Count() - 1);
+
+            return enumerable.ElementAt(index);
         }
 
         public Dto.Monster GetMonsterByName(string monsterName)
         {
-            throw new NotImplementedException();
+            var monster = _allMonsters.First(a => a.Name == monsterName);
+            return monster;
         }
     }
 }

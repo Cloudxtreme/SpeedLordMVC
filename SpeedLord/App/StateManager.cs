@@ -20,6 +20,7 @@ namespace SpeedLord.App
         private const string CurrentCharacterData = "Character";
         private const string CurrentCharacterDataRefreshTime = "CharacterRefreshTime";
         private const string SavedUserName = "SavedUser"; //for simulation
+        private const string CurrentCombatName = "CurrentCombat"; 
 
         /// <summary>
         ///     Get/Set Customer per session
@@ -48,7 +49,13 @@ namespace SpeedLord.App
             set { SetInSession(SavedUserName, value); }
         }
 
-       
+        public static Combat CurrentCombat
+        {
+            get { return GetFromSession<Combat>(CurrentCombatName); }
+            set { SetInSession(CurrentCombatName, value);}
+        }
+
+
 
         /// <summary>
         /// Get value from session

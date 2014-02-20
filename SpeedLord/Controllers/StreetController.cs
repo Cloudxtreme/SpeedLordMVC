@@ -8,7 +8,7 @@ using SpeedLord.Models;
 
 namespace SpeedLord.Controllers
 {
-    public class StreetController : Controller
+    public class StreetController : BaseController
     {
         //
         // GET: /Street/
@@ -18,11 +18,10 @@ namespace SpeedLord.Controllers
             var screenResult = new ScreenResult
             {
                 OutputText = "You are in the street",
-                ScreenOptions = new List<ScreenOption> { new ScreenOption { CommandKey = "F", Description = "Go To the [F]orest", PostUrl = "Forest" } }
+                ScreenOptions = new List<ScreenOption> { new ScreenOption { CommandKey = "F", Description = "Go To the [F]orest", PostUrl = "/Forest" } }
             };
-            var data = JsonConvert.SerializeObject(screenResult);
 
-            return new JsonResult { Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return SerializeScreenResult(screenResult);
         }
 
     }

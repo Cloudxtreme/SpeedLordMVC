@@ -34,6 +34,9 @@ namespace SpeedLord
     {
         container.RegisterType<IAccountRepository, FakeAccountRepository>();
         container.RegisterType<ICombatRepository, FakeCombatRepository>();
+        container.RegisterType<IMonsterRepository, FakeMonsterRepository>();
+        container.RegisterType<IAbilityRepository, FakeAbilityRepository>();
+        container.RegisterType<ICharacterRepository, FakeCharacterRepository>();
     }
   }
 }

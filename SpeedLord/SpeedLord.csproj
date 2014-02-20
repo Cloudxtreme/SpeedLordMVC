@@ -181,6 +181,8 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArmorStoreController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CombatController.cs" />
     <Compile Include="Controllers\FieldsController.cs" />
     <Compile Include="Controllers\ForestController.cs" />
     <Compile Include="Controllers\GameController.cs" />

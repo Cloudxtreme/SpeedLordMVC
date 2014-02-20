@@ -16,7 +16,7 @@ namespace SpeedLord.Dto
     {
         public Guid Id { get; set; }
         public int CharacterId { get; set; }
-        public int MonsterId { get; set; }
+        public Monster Monster { get; set; }
         public int MonsterCurrentHp { get; set; }
         public CombatOutcome Outcome { get; set; }
         public int NumberOfTurns { get; set; }

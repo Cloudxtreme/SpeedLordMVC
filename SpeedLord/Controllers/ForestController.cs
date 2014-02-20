@@ -11,13 +11,15 @@ using SpeedLord.Interfaces.Repositories;
 
 namespace SpeedLord.Controllers
 {
-    public class ForestController : Controller
+    public class ForestController : BaseController
     {
-        private ICombatRepository _combatRepository;
+        private readonly ICombatRepository _combatRepository;
+        private readonly IMonsterRepository _monsterRepository;
 
-        public ForestController(ICombatRepository combatRepository)
+        public ForestController(ICombatRepository combatRepository, IMonsterRepository monsterRepository)
         {
             _combatRepository = combatRepository;
+            _monsterRepository = monsterRepository;
         }
 
         //
@@ -31,14 +33,13 @@ namespace SpeedLord.Controllers
                 OutputText = "You are in the Forest",
                 ScreenOptions = new List<ScreenOption>
                     {
-                        new ScreenOption { CommandKey = "L", Description = "[L]ook for something to kill.", PostUrl = "Forest/Look" },
-                        new ScreenOption { CommandKey = "H", Description = "[H]ealers Hut", PostUrl = "Healer" },
-                        new ScreenOption { CommandKey = "R", Description = "[R]eturn to Town", PostUrl = "Street" },
+                        new ScreenOption { CommandKey = "L", Description = "[L]ook for something to kill.", PostUrl = "/Forest/Look" },
+                        new ScreenOption { CommandKey = "H", Description = "[H]ealers Hut", PostUrl = "/Healer" },
+                        new ScreenOption { CommandKey = "R", Description = "[R]eturn to Town", PostUrl = "/Street" },
                     }
             };
-            var data = JsonConvert.SerializeObject(screenResult);
 
-            return new JsonResult { Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return SerializeScreenResult(screenResult);
         }
 
 
@@ -68,11 +69,33 @@ namespace SpeedLord.Controllers
                 }*/
 
                 //for now we'll always assume combat
-<<<<<<< HEAD
-                Combat cb = 
-=======
-                
->>>>>>> adding monster repo
+
+                if (StateManager.CurrentCombat == null)
+                {
+                    Monster monster = _monsterRepository.GetRandomMonster(StateManager.CurrentCharacter.Level);
+                    Combat cb = _combatRepository.StartCombat(StateManager.CurrentCharacter.Id, monster);
+
+
+                    StateManager.CurrentCombat = cb;
+
+                    var combatResult = new ScreenResult
+                    {
+                        OutputText = string.Format("You see a dangerous looking {0} wielding a {1}.", monster.Name,
+                                                   monster.WeaponName),
+                        ScreenOptions = new List<ScreenOption>
+                        {
+                            new ScreenOption { CommandKey = "A", Description = "[A]ttack", PostUrl = "/Combat/Attack" },
+                            new ScreenOption { CommandKey = "R", Description = "[R]un Away", PostUrl = "/Street" },
+                        }
+                    };
+
+                    var jsonCombatData = JsonConvert.SerializeObject(combatResult);
+
+                    return new JsonResult { Data = jsonCombatData, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+                }
+
+
             }
 
             var screenResult = new ScreenResult
@@ -80,15 +103,13 @@ namespace SpeedLord.Controllers
                 OutputText = "You are too tired, perhaps tomorrow",
                 ScreenOptions = new List<ScreenOption>
                     {
-                        new ScreenOption { CommandKey = "L", Description = "[L]ook for something to kill.", PostUrl = "Forest/Look" },
-                        new ScreenOption { CommandKey = "H", Description = "[H]ealers Hut", PostUrl = "Healer" },
-                        new ScreenOption { CommandKey = "R", Description = "[R]eturn to Town", PostUrl = "Street" },
+                        new ScreenOption { CommandKey = "L", Description = "[L]ook for something to kill.", PostUrl = "/Forest/Look" },
+                        new ScreenOption { CommandKey = "H", Description = "[H]ealers Hut", PostUrl = "/Healer" },
+                        new ScreenOption { CommandKey = "R", Description = "[R]eturn to Town", PostUrl = "/Street" },
                     }
             };
 
-            var data = JsonConvert.SerializeObject(screenResult);
-
-            return new JsonResult { Data = data, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return SerializeScreenResult(screenResult);
         }
 
     }

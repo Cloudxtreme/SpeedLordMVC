@@ -71,5 +71,11 @@ namespace SpeedLord.Dto
         /// Amount of encounters this character has left today
         /// </summary>
         public int EncountersLeft { get; set; }
+
+        /// <summary>
+        /// If the character is dead... potenitally read only property against HP
+        /// </summary>
+        public bool IsDead { get; set; }
+
     }
 }
